@@ -194,9 +194,11 @@
     border: 1px solid var(--color-decoration-2);
     background-color: var(--color-decoration-5);
     & .img-presentation{
-        width: 450px;
-        height: 275px;
+        height: 90%;
         object-fit: contain;
+
+        border: 5px solid white;
+        border-radius: 20px;
     }
 }
 
