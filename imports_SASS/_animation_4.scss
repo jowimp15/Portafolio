@@ -1,0 +1,119 @@
+@import "Warehouse";
+
+@keyframes light-on-AN4 {
+    from{
+        background-color: var(--background-color-principal) ;
+    }
+    to{
+        background-color: var(--color-decoration-2);
+    }
+}
+@keyframes opacity-icons-AN4 {
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.animation-4-technologies-AN4{
+    position: absolute;
+    bottom: 0rem;
+    right: 50%;
+
+    transform: translateX(50%);
+
+    width: 80%;
+    max-width: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+.light-AN4{
+    width:100% ;
+    height: 5rem;
+
+    background-color: var(--color-decoration-2);
+    background: linear-gradient(180deg, transparent 0%, var(--color-decoration-3) 100%);
+    
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
+    opacity: 0;
+    animation: opacity 0.5s ease forwards;
+}
+.resurt-animation-AN4{
+    min-height: 5rem;
+    width: 80%;
+    max-width: 70rem;
+    margin: auto;
+    margin-bottom: -2rem;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.base-AN4{
+    width: 100%;
+    height: 5rem;
+
+    background-color: var(--background-color-secundario);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.sub-base-AN4{
+    width:  80%;
+    height: 2rem;
+    margin: auto;
+
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: var(--color-decoration-5);
+
+    animation: light-on-AN4 0.5s ease forwards;
+}
+[class^="icon"]{
+    width: 5rem;
+    height: 5rem;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid black;
+    opacity: 0;
+    margin: 1rem;
+    transform: translateY(50px);
+    animation: opacity-icons-AN4 0.5s ease 0.5s forwards;
+    cursor: pointer;
+}
+.icon-ts{
+    width: 4.5rem;
+}
+@media screen and (max-width:1000px){
+    [class^="icon"]{
+        width: 4rem;
+        height: 4rem;
+    }
+}
+@media screen and (max-width:500px){
+    .base-AN4{
+        height: 4rem;
+    }
+    .sub-base-AN4{
+        height: 1rem;
+    }
+    .animation-technologies-AN4{
+        max-height: 30rem;
+        width: 50%;
+        overflow: auto;
+    }
+    [class^="icon"]{
+        width: 3rem;
+        height: 3rem;
+    }
+}

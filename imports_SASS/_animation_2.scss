@@ -1,0 +1,212 @@
+@import "Warehouse";
+
+
+@keyframes ball-translate-AN2 {
+    from{
+        transform: rotate(0.25turn) translateY(60vw);
+    }
+    to{
+        transform: rotate(0.25turn) translateY(0);
+    }
+}
+@keyframes ball-rotate-AN2 {
+    from{
+        transform: rotate(0.25turn) translateY(0);
+    }
+    to{
+        transform: rotate(0turn) translateY(0);
+    }
+}
+
+/*  */
+@keyframes ball-translate-AN2-end {
+    from{
+        transform: rotate(-0.25turn) translateY(0);
+    }
+    to{
+        transform: rotate(-0.25turn) translateY(2000%);
+    }
+}
+@keyframes ball-rotate-AN2-end {
+    from{
+        transform: rotate(0turn) translateY(0);
+    }
+    to{
+        transform: rotate(-0.25turn) translateY(0);
+    }
+}
+/*     animation: ball-rotate-AN2-end 0.5s ease 0.5s forwards, ball-translate-AN2-end 0.5s ease 1s forwards ; */
+
+
+/*  */
+@keyframes cone-colors-AN2 {
+    from{
+        border-top:2.5rem solid var(--color-text-principal);
+    }   
+    to{
+        border-top:2.5rem solid transparent;
+    } 
+}
+/*  */
+@keyframes platform-AN2 {
+    from{
+        width: 0;
+    }
+    to{
+        width: 80%;
+
+    }
+}
+@keyframes platform-AN2-end {
+    from{
+        width: 80%;
+    }
+    to{
+        width: 0;
+
+    }
+}
+
+.animation-2-presentation{
+    position: relative;
+    width: 100%;
+    height: 80%;
+
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ball-inside-AN2{
+    position: absolute;
+    bottom: -5rem;
+
+    width: 3rem;
+    height: 3rem;
+    
+    border-radius: 50%;
+    border: 0.9rem solid var(--background-color-tercero);
+    border-top: 0.9rem solid var(--color-text-principal);
+    transform: rotate(0.25turn) translateY(60vw);
+    animation: ball-translate-AN2 0.5s ease forwards, ball-rotate-AN2 0.3s ease 0.5s forwards ;
+    background-color: var(--background-color-secundario);
+}
+.cone-AN2{
+    position: absolute;
+    bottom: -3rem;
+
+    width: 100px;
+    height: 50px;
+
+    border: 2rem solid transparent;
+    border-top:2.5rem solid var(--color-text-principal);
+    opacity: 0;
+
+    animation: opacity 0.2s linear 0.7s forwards, cone-colors-AN2 0.1s linear infinite ;
+    transform: translateY(20px);
+}
+.border-platform-AN2{
+    position: absolute;
+    bottom: 0;
+
+    width: 0%;
+    height: 5rem;
+    background-color: #ffffff63;
+    background: linear-gradient(180deg, transparent 0%, var(--color-decoration-2) 100%);
+    
+    opacity: 0;
+    animation: opacity 0.2s linear 1s forwards, platform-AN2 0.5s ease 1s forwards ;
+    border-bottom: 5px solid var(--color-text-principal);
+    pointer-events: none;
+}
+.text-container-AN2{
+    position: relative;
+
+    width: 80%;
+    height: 100%;
+    opacity: 0;
+
+    background-color: var(--background-color-secundario);
+    border: 3px solid var(--color-decoration-2);
+    border-radius: 20px;
+    animation: opacity 0.2s linear 1.5s forwards ;
+}
+.text-container-AN2::after,.text-container-AN2::before {
+    content: "";
+    
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    transform: translateY(-50%);
+
+    width: 5px;
+    height: 70%;
+
+    border-radius:50px;
+    background-color: var(--color-text-principal);
+    border: 1px solid var(--color-decoration-2);
+    box-shadow: 0px 0px 5px 5px var(--color-decoration-2);
+}
+.text-container-AN2::after{
+    left: 2rem;
+}
+.text-container-AN2::before{
+    right: 2rem;
+}
+.container-decoration{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+    background-color: var(--background-color-principal);
+}
+.text-presentatio-AN2{    
+    width: 80%;
+    font-size: $--step-0;
+    max-width: 1200px;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 2rem;
+
+    padding: 1rem;
+    color: var(--color-text-principal);
+}
+
+// MEDIA QUERY ////////////////////////////////////
+
+@media screen and (max-height:500px) and (orientation:landscape){
+    .text-presentatio-AN2{
+        font-size: $--step-0;
+    }
+}
+@media screen and (max-width:500px){
+    @keyframes platform-AN2 {
+        from{
+            width: 0;
+        }
+        to{
+            width: 100%;
+    
+        }
+    }
+    .animation-2-presentation{
+        justify-content: flex-end;
+    }
+    .text-presentatio-AN2{
+        font-size: $--step--1;
+        max-height: 30rem;
+        overflow: hidden;
+        line-height: 1.5rem;
+    }
+    .text-container-AN2{
+        width: 100%;
+        height: 70%;
+    }
+    
+}

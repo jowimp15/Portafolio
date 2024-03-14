@@ -1,0 +1,416 @@
+@import "Warehouse";
+
+@keyframes light-animation-AN5 {
+    from{
+        background-image: radial-gradient(circle, transparent 0%, transparent 20%);
+    }
+    to{
+        background-image: radial-gradient(circle, var(--color-decoration-2) 0%, transparent 20%);
+    }
+}
+@keyframes move-animation-AN5 {
+    from{
+        transform: translateY(20px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+@keyframes ball-AN5 {
+    from{
+        width:2rem ;
+        height:2rem;
+    }
+    to{
+        width:6.5rem ;
+        height:6.5rem;
+    }
+}
+@keyframes ball-inside-AN5 {
+    from{
+        width:2rem ;
+        height:2rem;
+    }
+    to{
+        width:4.5rem ;
+        height:4.5rem;
+    }
+}
+@keyframes ball-inside2-AN5 {
+ from{
+    width:2rem ;
+    height:2rem; }
+to{
+    width:4rem ;
+    height:4rem;
+}
+}
+@keyframes rotate-animation-AN5 {
+    from{
+        transform: rotate(0deg);    
+    }
+    to{
+        transform: rotate(360deg);    
+    }
+}
+@keyframes floating {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        
+        transform: translateY(-20px);
+    }
+}
+@keyframes cube-show {
+    from{
+        transform: translateY(100px) scale(0.2);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+
+    }
+}
+@keyframes btn-left-AN5 {
+    from{
+        opacity: 0;
+        transform: translateX(0);
+    }   
+    to{
+        opacity: 1;
+        transform: translateX(-50%);
+    } 
+    }
+    @keyframes btn-right-AN5 {
+    from{
+        transform: translateX(0);
+        opacity: 0;
+    }   
+    to{
+        opacity: 1;
+        transform: translateX(50%);
+    } 
+    }
+.animation-5-proyects-AN5{
+    position: absolute;
+    bottom: 0;
+    left: 7vw;
+
+    width: 500px;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    
+
+    animation: move-animation-AN5 0.5s ease forwards, light-animation-AN5 0s ease 1s forwards;
+    background-image: radial-gradient(circle, transparent 0%, transparent 20%);
+    background-repeat: no-repeat;
+    background-position: center 21em;   
+}
+.ball-AN5{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-sizing: content-box;
+    border: 0.7rem solid var(--color-decoration-2);
+    border-top: 0.7rem solid transparent;
+    border-bottom:0.7rem solid transparent;
+    border-radius: 50%;
+
+    animation:ball-AN5 0.5s ease 0.5s forwards, rotate-animation-AN5 3s linear 0.5s infinite ;
+}
+.ball-inside-AN5{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 0.7rem solid var(--color-decoration-2);
+    border-left:0.7rem solid transparent;
+    border-right: 0.7rem solid transparent;
+    border-radius: 50%;
+    box-sizing: content-box;
+
+    animation:ball-inside-AN5 0.5s ease 0.5s forwards, rotate-animation-AN5 1s linear 0.5s infinite reverse ;
+}
+.ball-inside2-AN5{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--background-color-secundario);
+    border-radius: 50%;
+
+    animation:ball-inside2-AN5 0.5s ease 0.5s forwards ;
+}
+.ball-inside3-AN5{
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: 50%;
+    background-color: var(--color-decoration-2);
+}
+.light-blue-AN5{
+    width: 15rem;
+    height: 5rem;
+    margin-bottom: -2rem;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    opacity: 0;
+
+    background-image: linear-gradient(180deg, transparent 30%, var(--color-decoration-3) 100%);
+    animation: opacity 0.5s ease 0.7s forwards;
+}
+.info-projects{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "info";
+    padding: 0 1rem;
+    justify-items: center;
+    
+    color: var(--color-text-principal);
+    font-size: $--step--1;
+}
+.container-info-projects{
+    position: relative;
+    margin: auto;
+}
+.text-project{
+    grid-area: info;
+}
+.container-video{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "video";
+    justify-items: center;
+    align-items: center;
+}
+.resurt-animation-AN5{
+    position: absolute;
+    bottom: 30rem;
+
+    max-width:700px;
+    // display: grid;
+    // grid-template-columns: 100%;
+    // grid-template-rows: 100%;
+    // grid-template-areas: "img";
+    // align-items: center;
+    // justify-items: center;
+
+    opacity: 0;
+    background-color:var(--color-decoration-5) ;
+    border: 1px solid  var(--color-decoration-2);
+    color: var(--color-text-principal);
+
+    animation: opacity 1s ease 1s forwards;
+}
+.contaienr-video{
+    position: relative;
+    margin: auto;
+}
+.img-AN5{
+    grid-area: video;
+    object-fit: contain;
+
+    width: 90%;
+    height: 90%;
+}
+.btn-left-AN5,
+.btn-right-AN5{
+    position: absolute;
+    bottom: 30%;
+
+    opacity: 0;
+    font-size: 2rem;
+
+    transition:text-shadow 0.5s ease ;
+
+    color: var(--color-text-principal);
+    cursor: pointer;
+}
+.btn-left-AN5:hover, 
+.btn-right-AN5:hover{
+    text-shadow: 0px 0px 10px var(--color-decoration-2);
+    transition:text-shadow 0.5s ease ;
+}
+.btn-left-AN5{
+    left: 5rem;
+
+    animation: btn-left-AN5 0.5s ease 0.5s forwards;
+}
+.btn-right-AN5{
+    right: 5rem;
+
+    animation: btn-right-AN5 0.5s ease 0.5s forwards;
+}
+.container-title-proyect{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.title-proyect{
+    position: absolute;
+    top: -7rem;
+    left: 1rem;
+}
+.cubo-padre-AN5{
+    position: relative;
+
+    width: 10rem;
+    height: 10rem;
+    perspective: 100vw;
+    transform: translateY(100px) scale(0.2) ;
+    
+    opacity:0;
+    animation: cube-show 0.5s ease 0.5s forwards,  floating 2s ease-in-out 1s infinite alternate 
+}
+.cube-projects-AN5{
+    position: relative;
+    transition: transform 0.5s ease ;
+
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+}
+[class^="face"]{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--color-decoration-2);
+    background-color: var(--color-decoration-5);
+    transition:box-shadow ease 0.2s, transform 0.5s ease;
+
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+[class^="face"]:hover{
+    box-shadow: 0px 0px 20px 2px var(--color-decoration-2);
+    
+
+    transition:box-shadow ease 0.2s, transform 0.5s ease ;
+    cursor: pointer;
+}
+.face-1{
+    transform: translateZ(80px);
+}
+.face-2{
+    transform: translateY(80px) rotateX(-90deg);
+}
+.face-3{
+    transform: translateX(-80px) rotateY(-90deg);
+}
+.face-4{
+    transform: translateX(80px) rotateY(90deg);
+}
+.face-5{
+    transform: translateY(-80px) rotateX(-90deg) rotate(180deg);
+}
+.face-6{
+    transform: translateZ(-80px);
+}
+
+@media screen and (max-width:1200px) {
+    .animation-5-proyects-AN5{
+        left: 1vw;
+    }
+}
+@media screen and (max-width:1000px) {
+    .animation-5-proyects-AN5{
+        position: static;
+    }
+    .resurt-animation-AN5{
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0.5rem;
+    }
+    .title-proyect{
+        position: absolute;
+        left: auto;
+    }
+}
+@media screen and (max-height:500px) and (orientation:landscape){
+    .resurt-animation-AN5{
+        height: 90vh;
+        width: 90vw;
+    }
+}
+@media screen and (max-width:500px){
+    .resurt-animation-AN5{
+        position: absolute;
+        top: -20rem;
+        bottom: auto;
+        height:650px;
+        overflow-y: auto;
+    }
+    .cubo-padre-AN5{
+        width: 50%;
+        max-width: 8rem;
+        max-height: 8rem;   
+    }
+    .cube-projects-AN5{
+        width: 100%;
+        padding-bottom: 100%;
+    }
+    .btn-left-AN5{
+        left: 6vw;
+    }
+    .btn-right-AN5{
+        right: 6vw;
+    }
+    .face-1{
+        transform: translateZ(70px);
+    }
+    .face-2{
+        transform: translateY(70px) rotateX(-90deg);
+    }
+    .face-3{
+        transform: translateX(-70px) rotateY(-90deg);
+    }
+    .face-4{
+        transform: translateX(70px) rotateY(90deg);
+    }
+    .face-5{
+        transform: translateY(-70px) rotateX(-90deg) rotate(180deg);
+    }
+    .face-6{
+        transform: translateZ(-70px);
+    }
+}
+
+//////////////////////////////////////////////////////////////// Calls js
+
+.rotate-0{
+    transform: rotateY(0deg);
+}
+.rotate-1{
+    transform: rotateX(90deg);
+}
+.rotate-2{
+    transform: rotateY(90deg);
+}
+.rotate-3{
+    transform: rotateY(-90deg);
+}
+.rotate-4{
+    transform: rotateX(-90deg);
+}
+// .rotate-5{
+//     transform: rotateX(-90deg);
+// }

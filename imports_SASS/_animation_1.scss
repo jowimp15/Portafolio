@@ -1,0 +1,224 @@
+@import "Warehouse";
+
+@keyframes platforms {
+    from{
+        left: -5rem;
+    }
+    to{
+        left:0 ;
+    }
+}
+@keyframes first-arm {
+    from{
+        transform: translate(-200px, 250px) rotate(0.25turn);
+    }
+    to{
+        transform: translate(-20px, 250px) rotate(0.1turn);
+    }
+}
+@keyframes second-arm {
+    from{
+        transform: translate(-170px, 200px) rotate(-0.25turn);
+
+    }
+    to{
+        transform: translate(130px, 200px) rotate(-0.1turn);
+    }
+}
+
+@keyframes ball-ologram-active {
+    from{
+        background-color: var(--color-decoration-2);
+    }
+    to{
+        background-color:white;
+        
+    }
+}
+@keyframes ball-ologram-float {
+    from{
+        transform: translate(10px ,-20px) ;
+    }
+    to{
+        transform: translate(25px ,-40px) ;        
+    }
+}
+
+@keyframes cone-active {
+    0%{
+        border-top: 5rem var(--color-decoration-2) solid;
+    }
+    25%{
+        border-top: 5rem transparent solid;
+    }
+    75%{
+        border-top: 5rem white solid;
+    }
+    100%{
+        border-top: 5rem transparent solid;
+        
+    }
+}
+.animation-1-picture{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 500;
+
+    width: 500px;
+    height: 500px;
+}
+.platform-left-A1{
+    position: absolute;
+    left: -5rem;
+    top: 0;
+    
+    height: 2rem;
+    width: 15rem;
+    background-color: var(--background-color-secundario);
+    border-radius: 50px;
+    
+    transform-origin: bottom left;
+    transform: translateY(50px) rotate(0.25turn);
+
+    animation: platforms 0.5s ease 1s forwards;
+    &::after{
+    content: "";
+    position: absolute;
+    top: -3.5rem;
+    left: 0;
+
+    height: 4rem;
+    width: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(  rgba(0, 0, 0, 0) 0%, var(--color-decoration-2) 100%);
+}
+}
+.platform2-left-A1{
+    height: 2rem;
+    width: 20rem;
+    background-color: var(--background-color-tercero);
+    border-radius: 50px;
+
+    transform: translate(-35px,20px);
+}
+.first-arm-A1{
+    height: 3rem;
+    width: 15rem;
+    background-color: #47474783;
+    border-radius: 50px;
+    
+    background-color: var(--background-color-tercero);
+    border: 1px solid black;
+
+    transform: translate(-200px, 250px) rotate(0.25turn);
+    animation: first-arm 0.5s ease 1.5s forwards;   
+}
+.second-arm-A1{
+    position: relative;
+
+    height: 3rem;
+    width: 15rem;
+    background-color: #47474783;
+    border-radius: 50px;
+
+    border: 1px solid black;
+    
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    background-color: var(--background-color-tercero);
+
+    transform: translate(-170px, 200px) rotate(-0.25turn);
+    animation: second-arm 0.5s ease 1.5s forwards;
+
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 1rem;
+        right: -0.1rem;
+    
+        width: 2rem;
+        height: 2rem;
+        background-color: var(--color-decoration-2);
+        
+        border-radius: 50%;
+    }
+}
+.decoration-second-arm-A1{
+    position: absolute;
+    left: 0.5rem;
+
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--background-color-secundario);
+    
+    border-radius: 50%;
+    
+}
+.ball-ologram-A1{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    background-color: var(--color-decoration-2);
+
+    animation: ball-ologram-float 2s ease-in-out infinite alternate, ball-ologram-active 0.1s linear infinite;
+    transform: translate(10px ,-20px) scale(0);
+}
+.cone-A1{
+    box-sizing: border-box;
+    height: 10rem;
+    width: 10rem;
+
+    opacity: 0;
+
+    border: 5rem transparent solid;
+    border-top: 5rem white solid;
+
+    transform: translate(-35px ,-100px) rotate(0.1turn);
+    animation: opacity 0.5s ease 2.5s forwards, cone-active 0.2s linear infinite;
+}
+.resurt-animation-1{
+    position: absolute;
+    top: -24rem;
+    left: -15rem;
+
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--color-decoration-2);
+    background-color: var(--color-decoration-5);
+    & .img-presentation{
+        width: 450px;
+        height: 275px;
+        object-fit: contain;
+    }
+}
+
+//////////////////////////////////// media
+@media screen and (max-width:1200px) {
+    .animation-1-picture{
+        bottom: -10rem;
+
+        transform: scale(0.7) translateX(-100px);
+    }
+}
+@media screen and (max-height:500px) and (orientation:landscape) {
+    .animation-1-picture{
+        transform: scale(0.4);
+        left: -10rem;
+        bottom: -15rem;
+    }   
+}
+@media screen and (max-width:500px){
+    .animation-1-picture{
+        transform: scale(0.4);
+        left: -11rem;
+        bottom: -13rem;
+    }   
+}
