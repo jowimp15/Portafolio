@@ -1636,6 +1636,19 @@ h2 {
   filter: drop-shadow(0px 0px 5px var(--color-decoration-2));
 }
 
+[class^=title-bar] {
+  color: var(--color-text-principal);
+  font-size: clamp(2.4881rem, 2.0266rem + 2.3076vw, 3.815rem);
+  text-align: center;
+}
+
+.title-bar-3 {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .presentation-info {
   position: relative;
   width: 100%;
