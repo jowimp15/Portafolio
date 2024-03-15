@@ -290,7 +290,9 @@ const projects:pageORproects[]=[
             <li>Sincronización entre pestañas sin necesidad de Backend.</li>
             <li>Despliegue en servicio de hosting gratuito con URL pública.</li>
             <li>Al menos un test implementado.</li>
-        </ul>`,
+        </ul>
+        <small>Hecho con ReactTs + Vite</small>
+        `,
         url:""
     },
     {
