@@ -80,7 +80,7 @@ let nextprevius: "next" | "previus" = "next"
 const pages:pageORproects[] = [
     {
         text:`Es una página web que ofrece una herramienta interactiva para crear, probar y aprender expresiones regulares. Permite a los usuarios escribir expresiones regulares y ver cómo coinciden con diferentes cadenas de texto en tiempo real. Además, ofrece características como resaltado de sintaxis, sugerencias de código, explicaciones detalladas de cada parte de la expresión regular y opciones de configuración avanzada. Regexr es útil para desarrolladores web, programadores y cualquier persona que necesite trabajar con expresiones regulares, ya que simplifica el proceso de creación y depuración de patrones de búsqueda de texto. Su interfaz intuitiva y amigable hace que sea fácil de usar incluso para aquellos que no están familiarizados con las expresiones regulares.`,
-        image:"assets/images/pages/",
+        image:"assets/images/pages/regexr.jpg",
         title:"Regexr",
         url:"https://regexr.com/"
     },
